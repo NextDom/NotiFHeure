@@ -5,15 +5,14 @@ http://byfeel.info
 
 
 # Market
-En attente d'approbation
-Retrouvez le sur le [Market](https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&&name=NotifHeure)
+Retrouvez le sur le [Market](https://www.nextdom.org/alternativemarketforjeedom/) NextDom
 
 
 
 # Prévisualisation
 
 
-![screenshot1](../images/widgetNotif.jpg)
+![screenshot1](../images/widgetNotif2.png)
 
 # Forum
 

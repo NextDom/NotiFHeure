@@ -54,14 +54,14 @@ class NotifHeure extends eqLogic
     public static $_widgetPossibility = array ('custom' => array(
 
        'visibility' => true,
-       'displayName' => array('dashboard'=>true/false,'plan'=>true/false,'view'=>true,'mobile'=>true/false),
+       'displayName' => array('dashboard'=>true,'plan'=>true,'view'=>true,'mobile'=>true),
        //'displayName'=>true,
-       'displayObjectName' => true/false,
-       'optionalParameters' => true/false,
-       'background-color'=>true/false,
-       'text-color'=>true/false,
-       'border-radius' => true/false,
-       'border'=>true/false,
+       'displayObjectName' => true,
+       'optionalParameters' => true,
+       'background-color'=>true,
+       'text-color'=>true,
+       'border-radius' => true,
+       'border'=>true,
 
    ));
 
@@ -70,23 +70,54 @@ class NotifHeure extends eqLogic
     /**************** Methods ****************/
     public function preSave() {
       //si interface std
+        //log::add('NotifHeure', 'debug', 'presave');
         $this->setDisplay("width","400px");
+
     }
 
     public function preUpdate()
     {
+      // log::add('NotifHeure', 'debug', 'preupdate');
       // test si adresse ip ok
       if ($this->getConfiguration('IPnotif') == '') {
 			throw new Exception(__('L\'adresse IP ne peut être vide', __FILE__));
 		}
       //log::add('NotifHeure', 'debug', 'ip :'.$this->getConfiguration('IPnotif'));
-      self::upConfig();
+      if ($this->getIsEnable()==1)  self::upConfig();
 
 }
+public function preInsert()
+    {
+
+//log::add('NotifHeure', 'debug', 'preinsert');
+    }
+
+    public function postInsert()
+    {
+
+//log::add('NotifHeure', 'debug', 'postinsert');
+    }
+
+
+    public function postUpdate()
+    {
+//log::add('NotifHeure', 'debug', 'postupdate');
+    }
+
+    public function preRemove()
+    {
+
+    }
+
+    public function postRemove()
+    {
+
+    }
 
 
     public function postSave() {
 // création des commandes
+
         log::add('NotifHeure', 'debug', 'creations des commandes pour notifheure ip :'.$this->getConfiguration('IPnotif'));
         list($M, $m) = explode(".",$this->getConfiguration('version'));
         log::add('NotifHeure', 'debug', 'detection version notifheure - Version Majeur :'.$M.' Mineur :'.$m);

@@ -1,7 +1,6 @@
 # Idées pour de futures releases
 
-- Compte a rebours   / Minuteur
-- Fix sur message scrolling ( bouclage infni )
+-
 
 # Prochaine release
 
@@ -12,10 +11,21 @@
 
 [historique release](https://github.com/NextDom/plugin-NotifHeure/releases)
 
-### Version 1.0.1:  (**_15/01/2019_**)
 
-* Option choix widget ( entre widget par defaut systeme et widget NotifHeure )
-* Mise à jour des Widget Dashboard et Mobile
+### Version 1.1.4:  (**_18/11/2019_**)
+
+* Compatibilité avec PHP7
+
+### Version 1.1.2:  (**_09/03/2019_**)
+
+* fix bug - pas possible desactiver si plus sur reseau
+
+### Version 1.1.1 (**_30/01/2019_**)  
+* minuteur  
+* Boucle infini sur scrolling ( le type=fix fonctionne aussi sur message scrolling )  
+* Option pour supprimer le point clignottant sur Horloge OFF , afin que l'ecran soit complétement eteind.
+* Mis à jour Widget
+
 
 
 ### Détail des changements
